@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+class stud
+{
+private:
+    int roll;
+    float per;
+public:
+    stud(int x, float y);
+    ~stud();
+};
+
+stud::stud(int x, float y)
+{
+    roll=x;
+    per=y;
+    cout<<"The roll no of student is "<<roll<<endl;
+    cout<<"The percentage of student is "<<per<<endl;
+}   
+
+stud::~stud()
+{
+
+    cout<<"The distructor is exicuted"<<endl;
+}
+
+int main(){
+    stud std(45,63.6);
+    return 0;
+}
