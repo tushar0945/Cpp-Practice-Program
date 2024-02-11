@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+int count = 0;
+
+class demo
+{
+private:
+    int x, y;
+
+public:
+    demo(int a, int b);
+    demo(demo &obj);
+    ~demo();
+};
+
+demo::demo(int a, int b)
+{
+    x = a;
+    y = b;
+    count++;
+    cout << "Object " << count << endl;
+    cout << "value of x=" << x << " in object 1" << endl;
+    cout << "value of y=" << y << " in object 1" << endl;
+}
+demo::demo(demo &obj)
+{
+    x = obj.x;
+    y = obj.y;
+    count++;
+    cout << "Object " << count << endl;
+    cout << "value of x=" << x << " in object 2" << endl;
+    cout << "value of y=" << y << " in object 2" << endl;
+}
+
+demo::~demo()
+{
+    cout << "Object " << count << " is deleted" << endl;
+    count--;
+}
+
+int main()
+{
+    demo dm1(23, 34);
+
+    demo dm2 = dm1;
+    return 0;
+}
