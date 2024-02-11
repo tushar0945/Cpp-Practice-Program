@@ -1,30 +1,36 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class stud
+int count = 0;
+
+class demo
 {
 private:
-    int roll;
-    float per;
+    int x, y;
+
 public:
-    stud(int x, float y);
-    ~stud();
+    demo(int a, int b);
+    ~demo();
 };
 
-stud::stud(int x, float y)
+demo::demo(int a, int b)
 {
-    roll=x;
-    per=y;
-    cout<<"The roll no of student is "<<roll<<endl;
-    cout<<"The percentage of student is "<<per<<endl;
-}   
-
-stud::~stud()
-{
-
-    cout<<"The distructor is exicuted"<<endl;
+    x = a;
+    y = b;
+    count++;
+    cout << "Object " << count << endl;
+    cout << "value of x=" << x << endl;
+    cout << "value of y=" << y << endl;
 }
 
-int main(){
-    stud std(45,63.6);
+demo::~demo()
+{
+    cout << "Object " << count << " is deleted" << endl;
+    count--;
+}
+
+int main()
+{
+    demo dm1(23, 34), dm2(45, 56), dm3(67, 78);
     return 0;
 }
+
