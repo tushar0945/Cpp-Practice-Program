@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+class base
+{
+protected:
+    int data1, data2;
+
+public:
+    ~base()
+    {
+    }
+};
+
+class derived : public base
+{
+private:
+    int data3, data4;
+
+public:
+    void get(void)
+    {
+        cout << "Enter data " << endl;
+        cin >> data1 >> data2 >> data3 >> data4;
+    }
+    void disp(void)
+    {
+        cout << "Data is " << data1 << " " << data2 << " " << data3 << " " << data4 << " " << endl;
+    }
+    ~derived()
+    {
+    }
+};
+
+int main()
+{
+    derived d1;
+    d1.get();
+    d1.disp();
+    return 0;
+}
